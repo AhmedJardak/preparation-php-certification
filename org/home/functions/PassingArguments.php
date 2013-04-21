@@ -8,10 +8,11 @@
 
 namespace org\home\functions;
 
-function hello($who="World")
+function hello($who = "World")
 {
-    echo "Hello $who".PHP_EOL;
+    echo "Hello $who" . PHP_EOL;
 }
+
 hello();
 hello("World");
 /*Here we pass in the value, "World", and the function displays "Hello World"*/

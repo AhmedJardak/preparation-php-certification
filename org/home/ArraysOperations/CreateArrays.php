@@ -38,7 +38,7 @@ class CreateArrays
             'baz',
             'bat'
         );
-        echo $array[0][1] ."  ".$array[1][0];
+        echo $array[0][1] . "  " . $array[1][0];
 
     }
 }

@@ -9,23 +9,21 @@ namespace org\home\functions {
 //execution of samples if possible
     include "ReturnValueFunctions.php";
     /** @var $samples ReturnValueFunctions */
-    print("return Value types by value, by reference--------".PHP_EOL);
+    print("return Value types by value, by reference--------" . PHP_EOL);
     $samples = new ReturnValueFunctions();
-    print("-------------------------------------------------".PHP_EOL);
-    echo "NULL:".$samples->helloWorld().PHP_EOL;
-    print("-------------------------------------------------".PHP_EOL);
+    print("-------------------------------------------------" . PHP_EOL);
+    echo "NULL:" . $samples->helloWorld() . PHP_EOL;
+    print("-------------------------------------------------" . PHP_EOL);
     $samples->hello("user");
-    print("-------------------------------------------------".PHP_EOL);
+    print("-------------------------------------------------" . PHP_EOL);
     $samples->hello("World");
-    print("-------------------------------------------------".PHP_EOL);
-    echo $samples->query('select * from utilisateur').PHP_EOL;
-    print("-------------------------------------------------".PHP_EOL);
+    print("-------------------------------------------------" . PHP_EOL);
+    echo $samples->query('SELECT * FROM utilisateur') . PHP_EOL;
+    print("-------------------------------------------------" . PHP_EOL);
     $samples->getHello();
-    print("-------------------------------------------------".PHP_EOL);
-    echo $samples->getHelloCorrected().PHP_EOL;
-    print("-------------------------------------------------".PHP_EOL);
-
-
+    print("-------------------------------------------------" . PHP_EOL);
+    echo $samples->getHelloCorrected() . PHP_EOL;
+    print("-------------------------------------------------" . PHP_EOL);
 
 
 }
