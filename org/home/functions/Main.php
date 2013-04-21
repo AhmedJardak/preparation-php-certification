@@ -9,6 +9,7 @@ namespace org\home\functions {
 //execution of samples if possible
     include "ReturnValueFunctions.php";
     /** @var $samples ReturnValueFunctions */
+    print("return Value types by value, by reference--------".PHP_EOL);
     $samples = new ReturnValueFunctions();
     print("-------------------------------------------------".PHP_EOL);
     echo "NULL:".$samples->helloWorld().PHP_EOL;
