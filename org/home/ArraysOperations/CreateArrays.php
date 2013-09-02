@@ -18,9 +18,9 @@ class CreateArrays
 
     function __construct()
     {
-        $a = array();
-        $a = array(10, 20, 30);
-        $a = array('a' => 10, 'b' => 20, 'cee' => 30);
+        $d = array();
+        $c = array(10, 20, 30);
+        $b = array('a' => 10, 'b' => 20, 'cee' => 30);
         $a = array(5 => 1, 3 => 2, 1 => 3,);
 
         $x[] = 10;
