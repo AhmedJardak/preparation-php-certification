@@ -13,8 +13,9 @@ class FilesOperation
     function __construct()
     {
         //$this->fopenOperation();
-       // $this->ccommOpenFileOperation();
-        $this->fseekftellOperation();
+        // $this->ccommOpenFileOperation();
+       // $this->fseekftellOperation();
+        $this->fgetcsvfputcsvOperation();
     }
 
     public function fopenOperation()
@@ -52,6 +53,16 @@ class FilesOperation
         $file = fopen('counter.txt', 'r+');
         fseek($file, 10, SEEK_SET);
         echo ftell($file);
+    }
+
+    public function fgetcsvfputcsvOperation()
+    {
+        $f = fopen('file.csv', 'w+');
+        while ($row = fgetcsv($f)) {
+// handle values
+        }
+        $values = array("Davey Shafik", "http://zceguide.com", "Win Prizes!");
+        fputcsv($f, $values);
     }
 }
 
