@@ -13,7 +13,8 @@ class FilesOperation
     function __construct()
     {
         //$this->fopenOperation();
-        $this->ccommOpenFileOperation();
+       // $this->ccommOpenFileOperation();
+        $this->fseekftellOperation();
     }
 
     public function fopenOperation()
@@ -44,6 +45,13 @@ class FilesOperation
             $txt .= fread($file, 1);
         }
         echo "There have been $txt hits to this site.";
+    }
+
+    public function fseekftellOperation()
+    {
+        $file = fopen('counter.txt', 'r+');
+        fseek($file, 10, SEEK_SET);
+        echo ftell($file);
     }
 }
 
