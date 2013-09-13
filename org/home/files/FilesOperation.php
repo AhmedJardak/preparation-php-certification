@@ -14,8 +14,9 @@ class FilesOperation
     {
         //$this->fopenOperation();
         // $this->ccommOpenFileOperation();
-       // $this->fseekftellOperation();
-        $this->fgetcsvfputcsvOperation();
+        // $this->fseekftellOperation();
+        // $this->fgetcsvfputcsvOperation();
+        $this->fgetcontentfputcontentOperation();
     }
 
     public function fopenOperation()
@@ -63,6 +64,20 @@ class FilesOperation
         }
         $values = array("Davey Shafik", "http://zceguide.com", "Win Prizes!");
         fputcsv($f, $values);
+    }
+
+    public function fgetcontentfputcontentOperation()
+    {
+        $file = file_get_contents("myfile.txt");
+        $data = "My Data\n";
+        file_put_contents("myfile.txt", $data, FILE_APPEND);
+        $data = array("More Data", "And More", "Even More");
+        file_put_contents("myfile.txt", $data, FILE_APPEND);
+        /*
+         *      •  FILE_USE_INCLUDE_PATH — Causes the function to use the include_path to find the file
+                • FILE_APPEND — Appends the data to the file, rather than overwriting
+                • LOCK_EX — Acquire an exclusive lock before accessing the file. (PHP > 5.1.0
+         * */
     }
 }
 
