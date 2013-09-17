@@ -7,30 +7,17 @@
  * To change this template use File | Settings | File Templates.
  */
 
-class DirectoryOperation {
+class DirectoryOperation
+{
 
     function __construct()
     {
         //$this->chMkdirFunctions();
-       // $this->accessControlFunctions("newdir");
-      //  $this->accessControlFunctions("counter.txt");
+        // $this->accessControlFunctions("newdir");
+        //  $this->accessControlFunctions("counter.txt");
         //$this->chmodchagrpFunctions();
-
-        $f = fopen('http://www.google.tn',"r");
-$page = '';
-if ($f) {
-    while ($s = fread ($f, 1000)) {
-        $page .= $s;
-    }
-    echo $page;
-} else {
-    throw new Exception ("Unable to open connection to www.google.tn");
-}
-        
-        
-        
-        
-
+        //$this->fopenWithURL();
+        $this->ftruncateFunction();
 
     }
 
@@ -81,5 +68,26 @@ if ($f) {
 // chmod(), chgrp() and chown()
         chmod("myfile.txt", 0666);
     }
+
+    public function fopenWithURL()
+    {
+        $f = fopen('http://www.google.tn', "r");
+        $page = '';
+        if ($f) {
+            while ($s = fread($f, 1000)) {
+                $page .= $s;
+            }
+            echo $page;
+        } else {
+            throw new Exception ("Unable to open connection to www.google.tn");
+        }
+    }
+
+    public function ftruncateFunction()
+    {
+        $file = fopen("myfile.txt", "r+");
+        echo ftruncate($file, 31);
+    }
 }
+
 new DirectoryOperation();

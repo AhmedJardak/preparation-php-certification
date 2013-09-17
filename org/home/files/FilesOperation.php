@@ -14,9 +14,9 @@ class FilesOperation
     {
         //$this->fopenOperation();
         // $this->ccommOpenFileOperation();
-        // $this->fseekftellOperation();
+        //  $this->fseekftellOperation();
         // $this->fgetcsvfputcsvOperation();
-        $this->fgetcontentfputcontentOperation();
+        // $this->fgetcontentfputcontentOperation();
     }
 
     public function fopenOperation()
@@ -52,6 +52,7 @@ class FilesOperation
     public function fseekftellOperation()
     {
         $file = fopen('counter.txt', 'r+');
+        //fread($file,6);
         fseek($file, 10, SEEK_SET);
         echo ftell($file);
     }
