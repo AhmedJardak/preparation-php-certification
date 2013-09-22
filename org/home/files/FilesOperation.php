@@ -6,7 +6,6 @@
  * Time: 09:34
  * To change this template use File | Settings | File Templates.
  */
-
 class FilesOperation
 {
 
@@ -17,11 +16,30 @@ class FilesOperation
         //  $this->fseekftellOperation();
         // $this->fgetcsvfputcsvOperation();
         // $this->fgetcontentfputcontentOperation();
+        if (!file_exists("monfich.txt")) {
+            touch("monfich.txt", time());
+            tmpfile("temp.txt");
+        }
+        $file = fopen("counter.txt", 'a+');
+        var_dump($file);
+        $id_file = fopen("monfichier.txt", "a+");
+        flock($id_file, LOCK_SH); //
+        //ou encore
+        //flock($id_file,1 ou 2);
+        //opérations de lecture et/ou d'écriture
+        fwrite($id_file, "fff");
+        flock($id_file, LOCK_UN);
+        //ou encore
+        //flock($id_file,3);
+        fclose($id_file);
+
+
     }
 
     public function fopenOperation()
     {
         $file = fopen("counter.txt", 'a+');
+        var_dump($file);
         if ($file == false) {
             die ("Unable to open/create file");
         }
