@@ -16,22 +16,8 @@ class FilesOperation
         //  $this->fseekftellOperation();
         // $this->fgetcsvfputcsvOperation();
         // $this->fgetcontentfputcontentOperation();
-        if (!file_exists("monfich.txt")) {
-            touch("monfich.txt", time());
-            tmpfile("temp.txt");
-        }
-        $file = fopen("counter.txt", 'a+');
-        var_dump($file);
-        $id_file = fopen("monfichier.txt", "a+");
-        flock($id_file, LOCK_SH); //
-        //ou encore
-        //flock($id_file,1 ou 2);
-        //opérations de lecture et/ou d'écriture
-        fwrite($id_file, "fff");
-        flock($id_file, LOCK_UN);
-        //ou encore
-        //flock($id_file,3);
-        fclose($id_file);
+        //$this->fwritePutsFunctions();
+        $this->RewindFunction();
 
 
     }
@@ -97,6 +83,37 @@ class FilesOperation
                 • FILE_APPEND — Appends the data to the file, rather than overwriting
                 • LOCK_EX — Acquire an exclusive lock before accessing the file. (PHP > 5.1.0
          * */
+    }
+
+    public function fwritePutsFunctions()
+    {
+        if (!file_exists("monfich.txt")) {
+            touch("monfich.txt", time());
+            tmpfile("temp.txt");
+        }
+        $file = fopen("counter.txt", 'a+');
+        var_dump($file);
+        $id_file = fopen("monfichier.txt", "a+");
+        // flock($id_file, LOCK_SH); //
+        //ou encore
+        //flock($id_file,1 ou 2);
+        //opérations de lecture et/ou d'écriture
+        fwrite($id_file, "fff\n");
+        fputs($id_file, "qqq\n");
+        flock($id_file, LOCK_UN);
+        //ou encore
+        //flock($id_file,3);
+        fclose($id_file);
+    }
+
+    public function RewindFunction()
+    {
+        $file = fopen("counter.txt", 'a+');
+        fseek($file, 50);
+        echo ftell($file) . PHP_EOL;
+        rewind($file);
+        echo ftell($file) . PHP_EOL;
+        echo filesize("counter.txt") . PHP_EOL;
     }
 }
 
