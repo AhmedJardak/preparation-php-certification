@@ -17,7 +17,8 @@ class FilesOperation
         // $this->fgetcsvfputcsvOperation();
         // $this->fgetcontentfputcontentOperation();
         //$this->fwritePutsFunctions();
-        $this->RewindFunction();
+        //$this->RewindFunction();
+        $this->readTotalFileFunctions();
 
 
     }
@@ -114,6 +115,17 @@ class FilesOperation
         rewind($file);
         echo ftell($file) . PHP_EOL;
         echo filesize("counter.txt") . PHP_EOL;
+    }
+
+    public function readTotalFileFunctions()
+    {
+        readfile("monfichier.txt");
+        echo PHP_EOL . "------------------------------" . PHP_EOL;
+        $a = file("monfichier.txt");
+        print_r($a);
+        echo PHP_EOL . "------------------------------" . PHP_EOL;
+        $id_file = fopen("monfichier.txt", "r");
+        fpassthru($id_file);
     }
 }
 
