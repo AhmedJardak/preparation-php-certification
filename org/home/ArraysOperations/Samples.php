@@ -98,6 +98,12 @@ function arrayDiff()
 
 }
 
-arrayDiff();//0->1,1->2,2->3,4->9,5->10
+arrayDiff(); //0->1,1->2,2->3,4->9,5->10
 
+
+$array = array(
+    "Apples",
+    "Oranges",
+    "Pears");
+var_export($array);
 

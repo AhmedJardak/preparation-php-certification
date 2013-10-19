@@ -21,3 +21,28 @@ $a = new A;
 $a->amount = 50;
 $b = var_export($a, true);
 echo $b->amount;
+
+echo PHP_EOL . "------------------" . PHP_EOL;
+
+class M
+{
+    public function b(array $b)
+    {
+        print_r($b);
+    }
+}
+
+M::b('6');
+echo PHP_EOL . "------------------" . PHP_EOL;
+
+
+//
+class N
+{
+    function b()
+    {
+        echo __CLASS__;
+    }
+}
+
+N::b();

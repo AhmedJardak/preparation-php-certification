@@ -12,3 +12,10 @@ preg_match_all('/\\b[0-9]{2,4}\\b/',
     $referers);
 
 var_export($referers);
+
+
+echo PHP_EOL . "-----------------------" . PHP_EOL;
+
+preg_match_all('/[ab]/',
+    "The cat is in the barn", $referers);
+var_export($referers);
