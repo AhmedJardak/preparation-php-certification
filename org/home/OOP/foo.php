@@ -7,8 +7,12 @@
  */
 namespace org\home\OOP;
 
+
+include "out.php";
 class foo
 {
+    use out;
+
     static $bar = "bat";
 
     public static function baz()
@@ -19,5 +23,8 @@ class foo
 }
 
 $foo = new foo();
+var_dump($foo);
 $foo->baz();
 echo $foo->bar;
+$foo->printLn("trait output");
+

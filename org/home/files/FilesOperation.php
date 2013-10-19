@@ -18,7 +18,10 @@ class FilesOperation
         // $this->fgetcontentfputcontentOperation();
         //$this->fwritePutsFunctions();
         //$this->RewindFunction();
-        $this->readTotalFileFunctions();
+        // $this->readTotalFileFunctions();
+        echo PHP_EOL . "------------------------------" . PHP_EOL;
+        $fileOPen = fopen("nex.tex", "c+");
+        fpassthru($fileOPen);
 
 
     }
@@ -124,7 +127,9 @@ class FilesOperation
         $a = file("monfichier.txt");
         print_r($a);
         echo PHP_EOL . "------------------------------" . PHP_EOL;
-        $id_file = fopen("monfichier.txt", "r");
+        $id_file = fopen("monfichier.txt", "rb");
+        //rewind($id_file);
+        //fseek($id_file,3);
         fpassthru($id_file);
     }
 }
