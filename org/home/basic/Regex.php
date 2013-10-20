@@ -19,3 +19,12 @@ echo PHP_EOL . "-----------------------" . PHP_EOL;
 preg_match_all('/[ab]/',
     "The cat is in the barn", $referers);
 var_export($referers);
+
+
+preg_match('/Nov 10(th)??/',
+    'Today is Nov 10th, 2010',
+    $referers);
+var_export($referers);
+
+
+
